@@ -22,7 +22,7 @@ D;JEQ // if index 0 = 0 then end loop
 @R1
 D=M
 @R2
-M=M+D // put sum of index 2 and index 1 back to index 2
+M=D+M // R2 = R1 + R2
 @R0
 M=M-1
 
