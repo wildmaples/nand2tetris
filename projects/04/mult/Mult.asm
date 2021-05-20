@@ -9,21 +9,21 @@
 // This program only needs to handle arguments that satisfy
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
-@2 // set index 2 to 0
+@R2 // set index 2 to 0
 M=0
 
 (LOOP)
-@0
+@R0
 D=M
 
 @END
-D;JEQ // if index 0 is < 0 then end loop
+D;JEQ // if index 0 = 0 then end loop
 
-@1
+@R1
 D=M
-@2
+@R2
 M=M+D // put sum of index 2 and index 1 back to index 2
-@0
+@R0
 M=M-1
 
 @LOOP
