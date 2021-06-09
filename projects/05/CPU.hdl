@@ -72,9 +72,8 @@ CHIP CPU {
 
     // Determine if the ALU output is positive
     // Because ALU doesn't provide that
-    Not(in=ALUnegative, out=notALUnegative);
-    Not(in=ALUzero, out=notALUzero);
-    And(a=notALUnegative, b=notALUzero, out=ALUpositive);
+    Or(a=ALUnegative, b=ALUzero, out=negativeOrZero);
+    Not(in=negativeOrZero, out=ALUpositive);
 
     And(a=ALUpositive, b=instruction[0], out=jumpIfPositive);
     And(a=ALUzero, b=instruction[1], out=jumpIfZero);
