@@ -57,7 +57,7 @@ CHIP CPU {
     // A-Register
     Not(in=instruction[15], out=UseAInstruction);
     Or(a=UseAInstruction, b=instruction[5], out=SaveAInstruction);
-    Mux16(a=ALUout, b=instruction, sel=UseAInstruction, out=AInstruction);
+    Mux16(a=instruction, b=ALUout, sel=instruction[15], out=AInstruction);
     ARegister(in=AInstruction, load=SaveAInstruction, out=ARegisterOut, out[0..14]=addressM);
 
     // D-Register
