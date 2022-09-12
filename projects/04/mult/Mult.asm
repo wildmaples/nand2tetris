@@ -23,8 +23,7 @@ D=M
 @R2
 M=D+M // R2 = R1 + R2
 @R0
-M=M-1
-D=M // make D point to counter
+MD=M-1
 
 @LOOP
 0;JMP // continue loop
